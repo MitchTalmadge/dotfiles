@@ -1,0 +1,4 @@
+# This file acts similarly to .bashrc, except for all shells (sh, bash, ksh, zsh, tcsh, csh, ...)
+
+# Set up aliases
+. ~/.dotfiles/shells/all/.aliases

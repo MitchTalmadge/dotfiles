@@ -2,7 +2,7 @@ if ($?prompt) then
   # Try to switch to zsh
   set NEW_SHELL="`command -v zsh`"
   if ("$NEW_SHELL" != "") then
-    echo "** SHELL: ZSH **"
+    echo "** SHELL: $NEW_SHELL **"
     setenv SHELL "$NEW_SHELL"
     exec "$SHELL" -l
   endif
@@ -10,7 +10,7 @@ if ($?prompt) then
   # Try to switch to bash
   set NEW_SHELL="`command -v bash`"
   if ("$NEW_SHELL" != "") then
-    echo "** SHELL: BASH **"
+    echo "** SHELL: $NEW_SHELL **"
     setenv SHELL "$NEW_SHELL"
     exec "$SHELL" -l
   endif
@@ -21,17 +21,17 @@ if ($?prompt) then
     # Try to switch to tcsh.
     set NEW_SHELL="`command -v tcsh`"
     if ("$NEW_SHELL" != "") then
-      echo "** SHELL: TCSH **"
+      echo "** SHELL: $NEW_SHELL **"
       setenv SHELL "$NEW_SHELL"
       exec "$SHELL" -l
     else
-      # Fallback to default csh.
-      echo "** SHELL: CSH **"
+      # Fallback to default.
+      echo "** SHELL: $SHELL **"
     endif
   endif
 else
-  echo "** SHELL: TCSH/CSH NON-INTERACTIVE **"
+  echo "** SHELL: $SHELL NON-INTERACTIVE **"
 endif
 
-# Set environment variables
-. ~/.dotfiles/shells/all/.env_vars
+# Inherit all .profile
+. ~/.dotfiles/shells/all/.profile

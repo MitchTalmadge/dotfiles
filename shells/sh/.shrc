@@ -1,0 +1,7 @@
+# This file is inherited by all bourne shells.
+
+# Inherit .allrc
+. ~/.dotfiles/shells/all/.allrc
+
+# Bourne-specific aliases
+# TODO: Placeholder
