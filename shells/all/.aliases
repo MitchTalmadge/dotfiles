@@ -1,4 +1,4 @@
-(test $0 = "tcsh" || test $0 = "csh") || eval 'alias() { `command -v alias` "$1=$2"; }'
+(test $0 = "tcsh" || test $0 = "csh") || eval 'alias() { command alias "$1=$2"; }'
 
 alias ll "ls -lah"
 alias pb "nc termbin.com 9999"

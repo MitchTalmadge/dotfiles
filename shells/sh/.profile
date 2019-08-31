@@ -2,6 +2,7 @@
 
 # Tries to upgrade the default shell to preferred shell.
 upgrade_shell() {
+  echo "** CURRENT SHELL: $SHELL **"
   # Make sure to only switch shells on interactive sessions
   case $- in *i*)
     # Try to switch to zsh
@@ -10,7 +11,7 @@ upgrade_shell() {
     else
       NEW_SHELL=`command -v zsh`
       if [ -x "$NEW_SHELL" ]; then
-        echo "** SHELL: $NEW_SHELL **"
+        echo "> Upgrading to $NEW_SHELL"
         export SHELL="$NEW_SHELL"
         exec "$NEW_SHELL" -l
       fi
@@ -22,14 +23,11 @@ upgrade_shell() {
     else
       NEW_SHELL=`command -v bash`
       if [ -x "$NEW_SHELL" ]; then
-	echo "** SHELL: $NEW_SHELL **"
+	echo "> Upgrading to $NEW_SHELL"
         export SHELL="$NEW_SHELL"
         exec "$NEW_SHELL" -l
       fi
     fi
-
-    # Use default shell
-    echo "** SHELL: $SHELL **"
   esac
 }
 upgrade_shell
