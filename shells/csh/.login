@@ -35,3 +35,6 @@ endif
 
 # Inherit all .profile
 . ~/.dotfiles/shells/all/.profile
+
+# csh/tcsh specific environment variables
+# TODO: Placeholder

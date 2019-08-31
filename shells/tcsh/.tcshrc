@@ -1,0 +1,2 @@
+# Inherit .cshrc
+. ~/.dotfiles/shells/csh/.cshrc
