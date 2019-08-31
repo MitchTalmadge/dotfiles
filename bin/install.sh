@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Installing..."
 /bin/bash migrations/migrate.sh && \

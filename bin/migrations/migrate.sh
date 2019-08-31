@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 CURRENT_VERSION=`cat ~/.dotfiles/bin/migrations/current_version`
 

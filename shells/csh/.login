@@ -15,16 +15,23 @@ if ($?prompt) then
     exec "$SHELL" -l
   endif
 
-  # Try to switch to tcsh
-  set NEW_SHELL="`command -v tcsh`"
-  if ("$NEW_SHELL" != "") then
-    echo "** SHELL: TCSH **"
-    setenv SHELL "$NEW_SHELL"
-    exec "$SHELL" # Don't use login or a loop will occur.
-  endif
+  # Only try switching to tcsh if it is not already running.
+  if ("$SHELL" != "`command -v tcsh`") {
 
-  # Use default csh
-  echo "** SHELL: CSH **"
+    # Try to switch to tcsh.
+    set NEW_SHELL="`command -v tcsh`"
+    if ("$NEW_SHELL" != "") then
+      echo "** SHELL: TCSH **"
+      setenv SHELL "$NEW_SHELL"
+      exec "$SHELL" -l
+    else
+      # Fallback to default csh.
+      echo "** SHELL: CSH **"
+    endif
+  endif
 else
   echo "** SHELL: TCSH/CSH NON-INTERACTIVE **"
 endif
+
+# Set environment variables
+. ~/.dotfiles/shells/all/.env_vars

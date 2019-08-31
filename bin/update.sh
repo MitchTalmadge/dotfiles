@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 git pull --rebase origin master
-/bin/bash migrations/migrate.sh
+/bin/sh migrations/migrate.sh
