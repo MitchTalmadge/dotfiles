@@ -27,3 +27,9 @@ Config files for each shell individually, all bourne shells, and all shells in g
 
 ### tools
 For the tools, like tmux, vim, etc.
+
+## Shell Structure
+
+More details in the shell folder.
+
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRVG_8M-9_2zCTIzEm8OnLNeDNQpVofwwVyjL3XQlk5qCkw6NvWYFOmus5FZQQeBQiaY0heWyYnUIqX/pub?w=1778&amp;h=1157">
