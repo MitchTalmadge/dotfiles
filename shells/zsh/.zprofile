@@ -5,3 +5,6 @@ echo "> Executing zprofile"
 
 # zsh specific environment variables
 # TODO: Placeholder
+
+# Amends
+AMEND=~/.dotfiles/shells/amends/zsh/.zprofile && test -f $AMEND && source $AMEND

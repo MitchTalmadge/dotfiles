@@ -36,3 +36,7 @@ upgrade_shell
 
 # Inherit all .profile
 . ~/.dotfiles/shells/all/.profile
+
+# Amends
+AMEND=~/.dotfiles/shells/amends/sh/.profile && test -f $AMEND && source $AMEND
+

@@ -1,4 +1,14 @@
 # This file acts similarly to .bashrc, except for all shells (sh, bash, ksh, zsh, tcsh, csh, ...)
 
 # Set up aliases
-. ~/.dotfiles/shells/all/.aliases
+(test $SHELL = "`command -v tcsh`" || test $SHELL = "`command -v csh`") && \
+  eval 'alias csalias "alias"' || \
+  eval 'csalias() { alias "$1=$2"; }'
+
+csalias ll "ls -lah"
+csalias pb "nc termbin.com 9999"
+
+# Amends
+(test $SHELL = "`command -v tcsh`" || test $SHELL = "`command -v csh`") && \
+  eval 'set AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND' || \
+  eval 'AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND'

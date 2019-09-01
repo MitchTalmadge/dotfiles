@@ -1,2 +1,6 @@
 # Inherit .cshrc
 . ~/.dotfiles/shells/csh/.cshrc
+
+# Amends
+set AMEND=~/.dotfiles/shells/amends/tcsh/.tcshrc && test -f $AMEND && source $AMEND
+

@@ -5,3 +5,7 @@
 
 # Bourne-specific aliases
 # TODO: Placeholder
+
+# Amends
+AMEND=~/.dotfiles/shells/amends/sh/.shrc && test -f $AMEND && source $AMEND
+

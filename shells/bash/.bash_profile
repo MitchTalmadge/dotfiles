@@ -8,3 +8,7 @@ echo "> Executing .bash_profile"
 
 # Run .bashrc
 . ~/.bashrc
+
+# Amends
+AMEND=~/.dotfiles/shells/amends/bash/.bash_profile && test -f $AMEND && source $AMEND
+

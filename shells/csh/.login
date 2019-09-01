@@ -39,3 +39,7 @@ endif
 
 # csh/tcsh specific environment variables
 # TODO: Placeholder
+
+# Amends
+set AMEND=~/.dotfiles/shells/amends/csh/.login && test -f $AMEND && source $AMEND
+
