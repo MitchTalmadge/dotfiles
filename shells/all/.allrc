@@ -20,6 +20,10 @@ csalias egrep 'egrep --color=auto'
 
 csalias vis 'sudo -E vim'
 
+csalias gac 'git add .; git commit -m'
+csalias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@mitchtalmadge.com"'
+csalias gpm 'git push origin master'
+
 csalias pb 'nc termbin.com 9999' # Pastebin for terminals
 
 # Amends
