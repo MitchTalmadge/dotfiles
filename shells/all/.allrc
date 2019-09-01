@@ -18,6 +18,8 @@ csalias grep 'grep --color=auto'
 csalias fgrep 'fgrep --color=auto'
 csalias egrep 'egrep --color=auto'
 
+csalias vis 'sudo -E vim'
+
 csalias pb 'nc termbin.com 9999' # Pastebin for terminals
 
 # Amends
