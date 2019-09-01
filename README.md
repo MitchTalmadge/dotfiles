@@ -1,4 +1,4 @@
-#dotfiles
+# dotfiles
 
 Just like every other programmer who has ever wasted their entire weekend creating dotfiles, I have created a dotfile setup fit for royalty. If you were to look up "perfect dotfiles" in the dictionary, you would find nothing because that's two words. If, however, you looked it up in some mythical programmer dictionary, you might find a link to this repository. Truly, these dotfiles were born in the heavens, hand-crafted from the tears of angels, and brought to you on this earth through my repository. The world is complete now. You're welcome.
 
