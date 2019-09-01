@@ -5,8 +5,16 @@
   eval 'alias csalias "alias"' || \
   eval 'csalias() { alias "$1=$2"; }'
 
-csalias ll "ls -lah"
-csalias pb "nc termbin.com 9999"
+csalias ll 'ls -lah --color=auto'
+
+csalias dir 'dir --color=auto'
+csalias vdir 'vdir --color=auto'
+
+csalias grep 'grep --color=auto'
+csalias fgrep 'fgrep --color=auto'
+csalias egrep 'egrep --color=auto'
+
+csalias pb 'nc termbin.com 9999' # Pastebin for terminals
 
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
