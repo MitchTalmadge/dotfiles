@@ -8,7 +8,7 @@ Yeah, I could just ask the sysadmin to change my default shell, but who has the 
 
 This setup contains configurations for all the shells I expect myself to encounter, complete with migration support so that when I sign into an existing server, I can update everything to my newest mandatory standards. Never again will I have to ctrl+b inside tmux. 
 
-Plus, I have inheritance. Wanna add an alias for all bourne shells? Can do. Just wanna change a setting in zsh? Can do that too. 
+Plus, I have inheritance. Wanna add an alias to all bourne shells? Can do. Just need to change a setting in zsh? Can do that too. 
 
 And finally, since there will be times when I need custom configs on some servers, I have the ability to amend any config file without touching the originals. No git conflicts here!
 
