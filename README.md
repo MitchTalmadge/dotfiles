@@ -12,7 +12,7 @@ Plus, I have inheritance. Wanna add an alias for all bourne shells? Can do. Just
 
 And finally, since there will be times when I need custom configs on some servers, I have the ability to amend any config file without touching the originals. No git conflicts here!
 
-TL;DR: My dotfiles are better than yours. Did that make you angery?
+> TL;DR: My dotfiles are better than yours. Did that make you angery?
 
 ---
 
