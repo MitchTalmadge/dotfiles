@@ -1,2 +1,4 @@
 shells/amends/*
 !shells/amends/README.md
+backups/*
+!backups/README.md

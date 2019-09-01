@@ -4,25 +4,35 @@
 # ------------------------------------
 
 # csh
-ln -s ~/.dotfiles/shells/csh/.login  ~/.login
-ln -s ~/.dotfiles/shells/csh/.cshrc ~/.cshrc
+cp ~/.login ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/csh/.login  ~/.login
+cp ~/.cshrc ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/csh/.cshrc ~/.cshrc
 
 # tcsh
-ln -s ~/.dotfiles/shells/tcsh/.tcshrc ~/.tcshrc
+cp ~/.tcshrc ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/tcsh/.tcshrc ~/.tcshrc
 
 # sh/bourne
-ln -s ~/.dotfiles/shells/sh/.profile ~/.profile
+cp ~/.profile ~/.dotfiles/backups/ || true
+
+ln -sf ~/.dotfiles/shells/sh/.profile ~/.profile
 
 # bash
-ln -s ~/.dotfiles/shells/bash/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/shells/bash/.bashrc ~/.bashrc
+cp ~/.bash_profile ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/bash/.bash_profile ~/.bash_profile
+cp ~/.bashrc ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/bash/.bashrc ~/.bashrc
 
 # zsh
-ln -s ~/.dotfiles/shells/zsh/.zprofile ~/.zprofile
-ln -s ~/.dotfiles/shells/zsh/.zshrc ~/.zshrc
+cp ~/.zprofile ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/zsh/.zprofile ~/.zprofile
+cp ~/.zshrc ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/shells/zsh/.zshrc ~/.zshrc
 
 # Tools
 # ------------------------------------
 
 # tmux
-ln -s ~/.dotfiles/tools/tmux/.tmux.conf ~/.tmux.conf
+cp ~/.tmux.conf ~/.dotfiles/backups/ || true
+ln -sf ~/.dotfiles/tools/tmux/.tmux.conf ~/.tmux.conf
