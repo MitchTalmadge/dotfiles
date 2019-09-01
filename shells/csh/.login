@@ -35,7 +35,7 @@ if ($?prompt) then
 endif
 
 # Inherit all .profile
-. ~/.dotfiles/shells/all/.profile
+source ~/.dotfiles/shells/all/.profile
 
 # csh/tcsh specific environment variables
 # TODO: Placeholder
