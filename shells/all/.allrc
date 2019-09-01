@@ -5,7 +5,11 @@
   eval 'alias csalias "alias"' || \
   eval 'csalias() { alias "$1=$2"; }'
 
-csalias ll 'ls -lah --color=auto'
+csalias ls 'ls --color=auto'
+csalias ld 'ls -d -- */ 2>/dev/null || :'
+csalias lh 'ls -d .*'
+csalias la 'ls -a'
+csalias ll 'ls -lah'
 
 csalias dir 'dir --color=auto'
 csalias vdir 'vdir --color=auto'
