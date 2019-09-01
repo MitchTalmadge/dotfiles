@@ -1,3 +1,5 @@
+echo "> Executing .bash_profile"
+
 # Inherit sh .profile
 . ~/.dotfiles/shells/sh/.profile
 

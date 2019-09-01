@@ -1,3 +1,5 @@
+echo "> Executing sh .profile"
+
 # This profile is inherited by all bourne shells.
 
 # Tries to upgrade the default shell to preferred shell.
