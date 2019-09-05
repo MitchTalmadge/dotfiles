@@ -1,6 +1,12 @@
 #!/bin/sh
 
 echo "Installing..."
-/bin/bash migrations/migrate.sh && \
+
+# Migrations
+sh migrations/migrate.sh && \
+
+# Fonts
+sh ../lib/powerline-fonts/install.sh && \
+
 echo "Complete! Restart your shell to apply changes." || \
 echo "Failed to install."
