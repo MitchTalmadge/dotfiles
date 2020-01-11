@@ -2,6 +2,9 @@ echo "> Executing sh .profile"
 
 # This profile is inherited by all bourne shells.
 
+# Inherit all .profile
+. ~/.dotfiles/shells/all/.profile
+
 # Tries to upgrade the default shell to preferred shell.
 upgrade_shell() {
   echo "** CURRENT SHELL: $SHELL **"
@@ -33,9 +36,6 @@ upgrade_shell() {
   esac
 }
 upgrade_shell
-
-# Inherit all .profile
-. ~/.dotfiles/shells/all/.profile
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/sh/.profile && test -f $AMEND && source $AMEND
