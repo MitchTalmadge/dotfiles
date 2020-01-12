@@ -1,6 +1,8 @@
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
+echo "> Executing zsh/.zshrc"
+
 # oh-my-zsh
 
 # Path to your oh-my-zsh installation.

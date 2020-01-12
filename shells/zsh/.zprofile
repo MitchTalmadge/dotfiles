@@ -1,7 +1,7 @@
-echo "> Executing zprofile"
-
 # Inherit sh .profile
 . ~/.dotfiles/shells/sh/.profile
+
+echo "> Executing zsh/.zprofile"
 
 # zsh specific environment variables
 # TODO: Placeholder

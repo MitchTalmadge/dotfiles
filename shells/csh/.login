@@ -1,4 +1,7 @@
-echo "> Executing csh .login"
+# Inherit all .profile
+source ~/.dotfiles/shells/all/.profile
+
+echo "> Executing csh/.login"
 
 echo "** CURRENT SHELL: $SHELL **"
 if ($?prompt) then
@@ -33,9 +36,6 @@ if ($?prompt) then
     endif
   endif
 endif
-
-# Inherit all .profile
-source ~/.dotfiles/shells/all/.profile
 
 # csh/tcsh specific environment variables
 # TODO: Placeholder

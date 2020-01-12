@@ -1,9 +1,9 @@
-echo "> Executing .bash_profile"
-
 # Inherit sh .profile
 . ~/.dotfiles/shells/sh/.profile
 
 # bash specific environment variables
+echo "> Executing bash/.bash_profile"
+
 # TODO: Placeholder
 
 # Run .bashrc
