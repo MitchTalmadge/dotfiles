@@ -10,6 +10,10 @@ setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
 
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
+# Check for updates
+sh ~/.dotfiles/bin/auto-update.sh
+setenv DOTFILES_UPDATED "true"
+
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
   (eval 'set AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND' || true) || \
