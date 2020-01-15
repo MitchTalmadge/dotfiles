@@ -6,6 +6,7 @@ echo "> Executing all/.profile"
 
 setenv DOTFILES_VERSION "`cat ~/.dotfiles/bin/migrations/current_version`"
 setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:/usr/local/bin:$PATH"
+setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
 
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
