@@ -11,9 +11,7 @@ echo "** DEFAULT SHELL: $CURR_SHELL **"
 # Make sure to only switch shells on interactive sessions
 case $- in *i*)
   # Try to switch to zsh
-  if test "$CURR_SHELL" = "`command -v zsh`"; then
-    return;
-  else
+  if [ "$CURR_SHELL" != "`command -v zsh`" ]; then
     NEW_SHELL=`command -v zsh`
     if [ -x "$NEW_SHELL" ]; then
       echo "> Upgrading to $NEW_SHELL"
@@ -23,9 +21,7 @@ case $- in *i*)
   fi
     
   # Try to switch to bash
-  if test "$CURR_SHELL" = "`command -v bash`"; then
-    return;
-  else
+  if [ "$CURR_SHELL" = "`command -v bash`" ]; then
     NEW_SHELL=`command -v bash`
     if [ -x "$NEW_SHELL" ]; then
       echo "> Upgrading to $NEW_SHELL"
