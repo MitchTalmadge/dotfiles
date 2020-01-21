@@ -3,7 +3,6 @@
 # Inherit all .profile
 . ~/.dotfiles/shells/all/.profile
 
-# Amends
 echo "> Executing sh/.profile"
 
 # Try to upgrade the default shell to preferred shell.
@@ -36,4 +35,5 @@ case $- in *i*)
   fi
 esac
 
+# Amends
 AMEND=~/.dotfiles/shells/amends/sh/.profile && test -f $AMEND && source $AMEND
