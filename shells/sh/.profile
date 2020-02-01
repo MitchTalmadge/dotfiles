@@ -12,6 +12,7 @@ echo "** DEFAULT SHELL: $CURR_SHELL **"
 case $- in *i*)
   # Try to switch to zsh
   if [ "$CURR_SHELL" != "`command -v zsh`" ]; then
+    echo "> Trying zsh upgrade..."
     NEW_SHELL=`command -v zsh`
     if [ -x "$NEW_SHELL" ]; then
       echo "> Upgrading to $NEW_SHELL"
@@ -21,7 +22,8 @@ case $- in *i*)
   fi
     
   # Try to switch to bash
-  if [ "$CURR_SHELL" = "`command -v bash`" ]; then
+  if [ "$CURR_SHELL" != "`command -v bash`" ]; then
+    echo "> Trying bash upgrade..."
     NEW_SHELL=`command -v bash`
     if [ -x "$NEW_SHELL" ]; then
       echo "> Upgrading to $NEW_SHELL"
