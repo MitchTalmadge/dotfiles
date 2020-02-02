@@ -11,7 +11,7 @@ function upgrade_shell() {
 	echo "** DEFAULT SHELL: $CURR_SHELL **"
 	# Make sure to only switch shells on interactive sessions
 	case $- in *i*)
-	try_upgrade ksh || try_upgrade bash
+	try_upgrade zsh || try_upgrade bash
 	esac
 }
 
