@@ -5,6 +5,7 @@
 
 echo "> Executing sh/.profile"
 
+function upgrade_shell() {
 # Try to upgrade the default shell to preferred shell.
 export CURR_SHELL=$SHELL
 echo "** DEFAULT SHELL: $CURR_SHELL **"
@@ -19,6 +20,8 @@ case $- in *i*)
       export SHELL="$NEW_SHELL"
       exec "$NEW_SHELL" -l
     fi
+  else
+    return
   fi
     
   # Try to switch to bash
@@ -30,8 +33,13 @@ case $- in *i*)
       export SHELL="$NEW_SHELL"
       exec "$NEW_SHELL" -l
     fi
+  else
+    return
   fi
 esac
+}
+
+upgrade_shell
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/sh/.profile && test -f $AMEND && source $AMEND
