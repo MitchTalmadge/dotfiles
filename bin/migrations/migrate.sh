@@ -11,6 +11,6 @@ while [ "$DOTFILES_VERSION" -lt "$CURRENT_VERSION" ]
 do 
 	echo "Migrating from Version $DOTFILES_VERSION to Version $CURRENT_VERSION"
 	DOTFILES_VERSION=$((DOTFILES_VERSION + 1)) && \
-	$SHELL ~/.dotfiles/bin/migrations/$DOTFILES_VERSION.sh && \
+	sh ~/.dotfiles/bin/migrations/$DOTFILES_VERSION.sh && \
 	echo "Done!"
 done
