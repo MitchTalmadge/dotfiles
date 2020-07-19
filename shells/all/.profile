@@ -4,7 +4,6 @@ echo "> Executing all/.profile"
 # Set environment variables
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'
 
-setenv DOTFILES_VERSION "`cat ~/.dotfiles/bin/migrations/current_version`"
 setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:/usr/local/bin:$PATH"
 setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
 
@@ -12,7 +11,6 @@ setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # Check for updates
 sh ~/.dotfiles/bin/auto-update.sh
-setenv DOTFILES_UPDATED "true"
 
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \

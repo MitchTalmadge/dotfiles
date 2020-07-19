@@ -1,25 +1,22 @@
 #!/bin/sh
 set +o xtrace
 
-# Determine version from biggest migration name.
-VERSION=0
-for entry in `ls . | grep -E "^[0-9]+\.sh$"`
-do
-  ENTRY_VER=`echo $entry | grep -oE "[0-9]+"`
-  if [ "$ENTRY_VER" -gt "$VERSION" ]; then
-    VERSION=$ENTRY_VER
-  fi
-done
-
-if [ -z "$DOTFILES_VERSION" ]
-then
-	DOTFILES_VERSION=0
+# Determine versions
+CURRENT_VERSION=`~/.dotfiles/bin/migrations/version.sh`
+LOCAL_VERSION=0
+if [ -f "~/.dotfiles/bin/migrations/local_version" ]; then
+	LOCAL_VERSION=`cat ~/.dotfiles/bin/migrations/local_version`
 fi
 
-while [ "$DOTFILES_VERSION" -lt "$VERSION" ]
+# Perform migrations
+while [ "$LOCAL_VERSION" -lt "$CURRENT_VERSION" ]
 do 
-	echo "Migrating from Version $DOTFILES_VERSION to Version $VERSION"
-	DOTFILES_VERSION=$((DOTFILES_VERSION + 1)) && \
-	sh ~/.dotfiles/bin/migrations/$DOTFILES_VERSION.sh && \
+	echo "Migrating from Version $LOCAL_VERSION to Version $CURRENT_VERSION"
+	LOCAL_VERSION=$((LOCAL_VERSION + 1)) && \
+	sh ~/.dotfiles/bin/migrations/$LOCAL_VERSION.sh && \
 	echo "Done!"
 done
+
+# Save latest version
+echo $CURRENT_VERSION > ~/.dotfiles/bin/migrations/local_version
+echo "Migrations complete."

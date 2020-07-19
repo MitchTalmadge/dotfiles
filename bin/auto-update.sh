@@ -2,5 +2,6 @@
 
 if [ -z "$DOTFILES_UPDATED" ]; then
 	echo "> Updating dotfiles..."
-	(cd ~/.dotfiles && git pull && cd bin && sh update.sh) 
+	(cd ~/.dotfiles && git pull --rebase origin master && sh bin/migrations/migrate.sh)
+       	export DOTFILES_UPDATED="true"
 fi
