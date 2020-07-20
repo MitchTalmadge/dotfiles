@@ -1,22 +1,27 @@
 #!/bin/sh
 set +o xtrace
 
+echo " -------- Migrations -------- "
 # Determine versions
-CURRENT_VERSION=`~/.dotfiles/bin/migrations/version.sh`
+HEAD_VERSION=`~/.dotfiles/bin/migrations/version.sh`
 LOCAL_VERSION=0
-if [ -f "~/.dotfiles/bin/migrations/local_version" ]; then
+if [ -f ~/.dotfiles/bin/migrations/local_version ]; then
 	LOCAL_VERSION=`cat ~/.dotfiles/bin/migrations/local_version`
 fi
 
+echo " > Local Version: $LOCAL_VERSION"
+echo " > Head Version: $HEAD_VERSION"
+
 # Perform migrations
-while [ "$LOCAL_VERSION" -lt "$CURRENT_VERSION" ]
+while [ $LOCAL_VERSION -lt $HEAD_VERSION ]
 do 
-	echo "Migrating from Version $LOCAL_VERSION to Version $CURRENT_VERSION"
 	LOCAL_VERSION=$((LOCAL_VERSION + 1)) && \
-	sh ~/.dotfiles/bin/migrations/$LOCAL_VERSION.sh && \
-	echo "Done!"
+	echo " * Running Migration $LOCAL_VERSION ..."	
+	sh ~/.dotfiles/bin/migrations/$LOCAL_VERSION.sh
+	echo " ** Complete."
 done
 
 # Save latest version
-echo $CURRENT_VERSION > ~/.dotfiles/bin/migrations/local_version
-echo "Migrations complete."
+echo $HEAD_VERSION > ~/.dotfiles/bin/migrations/local_version
+echo " All Migrations Complete."
+echo " ----------------------------"
