@@ -3,7 +3,7 @@ set +o xtrace
 
 echo " -------- Migrations -------- "
 # Determine versions
-HEAD_VERSION=`~/.dotfiles/bin/migrations/version.sh`
+HEAD_VERSION=`sh ~/.dotfiles/bin/migrations/version.sh`
 LOCAL_VERSION=0
 if [ -f ~/.dotfiles/bin/migrations/local_version ]; then
 	LOCAL_VERSION=`cat ~/.dotfiles/bin/migrations/local_version`
