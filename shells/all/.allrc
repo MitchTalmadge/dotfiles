@@ -19,6 +19,7 @@ csalias grep 'grep --color=auto'
 csalias fgrep 'fgrep --color=auto'
 csalias egrep 'egrep --color=auto'
 
+csalias vi 'vim'
 csalias vis 'sudo -E vim'
 
 csalias get 'sudo apt-get install'
