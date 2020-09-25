@@ -35,6 +35,11 @@ csalias dc-restart 'dc down; dc up'
 csalias sdc 'sudo docker-compose'
 csalias sdc-restart 'sdc down; sdc up'
 
+# Environment Variables
+(echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'
+
+setenv GPG_TTY `tty`
+
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
   (eval 'set AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND' || true) || \
