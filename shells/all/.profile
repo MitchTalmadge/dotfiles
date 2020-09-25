@@ -9,8 +9,6 @@ setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
 
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
-setenv GPG_TTY=`tty`
-
 # Check for updates
 sh ~/.dotfiles/bin/auto-update.sh
 setenv DOTFILES_UPDATED "true"
