@@ -15,5 +15,5 @@ setenv DOTFILES_UPDATED "true"
 
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
-  (eval 'set AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND' || true) || \
-  (eval 'AMEND=~/.dotfiles/shells/amends/all/.allrc && test -f $AMEND && source $AMEND' || true)
+  (eval 'set AMEND=~/.dotfiles/shells/amends/all/.profile && test -f $AMEND && source $AMEND' || true) || \
+  (eval 'AMEND=~/.dotfiles/shells/amends/all/.profile && test -f $AMEND && source $AMEND' || true)
