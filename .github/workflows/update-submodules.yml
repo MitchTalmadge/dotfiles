@@ -14,11 +14,12 @@ jobs:
 
       - name: Checkout Submodules
         run: |
-          git checkout master --recurse-submodules
-          git pull
+          git submodule update --recursive
 
       - name: Commit Changes
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
           git commit -m "Auto-Update Submodules"
           git push
