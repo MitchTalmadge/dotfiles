@@ -14,6 +14,7 @@ jobs:
 
       - name: Checkout Submodules
         run: |
+          git submodule update --init --recursive
           git submodule update --recursive
 
       - name: Commit Changes
