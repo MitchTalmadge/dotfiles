@@ -1,0 +1,23 @@
+name: Update Submodules
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout Submodules
+        run: |
+          git checkout master --recurse-submodules
+          git pull
+
+      - name: Commit Changes
+        run: |
+          git add .
+          git commit -m "Auto-Update Submodules"
+          git push
