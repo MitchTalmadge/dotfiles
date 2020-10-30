@@ -14,11 +14,11 @@ jobs:
 
       - name: Checkout Submodules
         run: |
-          git submodule update --init --recursive
-          git submodule update --recursive
+          git submodule update --init --recursive --remote
 
       - name: Commit Changes
         run: |
+          git diff-index --quiet HEAD -- && exit
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
