@@ -1,7 +1,5 @@
 # ⏺📄
 
----
-
 ## Folder Structure
 
 ### bin
