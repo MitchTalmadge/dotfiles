@@ -25,7 +25,7 @@ csalias vis 'sudo -E vim'
 csalias get 'sudo apt-get install'
 
 csalias gac 'git add .; git commit -m'
-csalias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@mitchtalmadge.com"'
+csalias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@talmad.ge"'
 csalias gpm 'git push origin master'
 
 csalias pb 'nc termbin.com 9999' # Pastebin for terminals
