@@ -6,7 +6,7 @@ echo "> Executing all/.profile"
 
 setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:$HOME/.dotfiles/usr/bin:$HOME/go/bin:/usr/local/bin:$PATH"
 setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
-
+setenv LD_LIBRARY_PATH "$HOME/usr/local/lib:$LD_LIBRARY_PATH"
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 # Check for updates
