@@ -31,7 +31,7 @@ set -g monitor-activity off
 # Tmux Plugin Manager 
 # -------------------
 # Set plugin install dir
-set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.dotfiles/tools/tmux/plugins/tpm/plugins/"
+set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.dotfiles/tools/tmux/plugins/tpm-dl/"
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tmux-sensible'
