@@ -5,8 +5,8 @@ echo "> Executing all/.profile"
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'
 
 setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:$HOME/.dotfiles/usr/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH"
-setenv PKG_CONFIG_PATH "$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
-setenv LD_LIBRARY_PATH "$HOME/usr/local/lib:$LD_LIBRARY_PATH"
+setenv PKG_CONFIG_PATH "$HOME/usr/local/lib/pkgconfig:$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
+setenv LD_LIBRARY_PATH "$HOME/usr/local/lib:$HOME/usr/local/lib64:$LD_LIBRARY_PATH"
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 # Check for updates
