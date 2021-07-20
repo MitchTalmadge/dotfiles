@@ -1,5 +1,5 @@
 #!/bin/sh
-. ~/.dotfiles/bin/migrations/.migrate-utils
+. ~/.dotfiles/bin/migrations/.migrate-utils.sh
 
 # Shells
 # ------------------------------------
