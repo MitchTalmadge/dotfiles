@@ -1,6 +1,15 @@
 filetype plugin indent on
 syntax on
 
+"" Default 2 spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+"" YAML 2 spaces
+"" autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 "" Turn off auto-indent when pasting things
 "" --------------------------------------------------------------------
 function! WrapForTmux(s)
