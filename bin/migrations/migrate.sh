@@ -1,4 +1,5 @@
 #!/bin/sh
+. ~/.dotfiles/bin/utils/echo
 set +o xtrace
 
 echoi " -------- Migrations -------- "
