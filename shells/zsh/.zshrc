@@ -1,7 +1,7 @@
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
-echo "> Executing zsh/.zshrc"
+echoi "> Executing zsh/.zshrc"
 
 # oh-my-zsh
 

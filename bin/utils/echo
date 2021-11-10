@@ -1,0 +1,8 @@
+# Only echo when interactive
+if [[ $- == *i* ]]  
+then
+  alias echoi='echo'
+else
+  alias echoi='true'
+fi
+

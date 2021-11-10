@@ -2,7 +2,7 @@
 . ~/.dotfiles/shells/sh/.profile
 
 # bash specific environment variables
-echo "> Executing bash/.bash_profile"
+echoi "> Executing bash/.bash_profile"
 
 # TODO: Placeholder
 

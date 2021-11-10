@@ -1,5 +1,7 @@
+. ~/.dotfiles/bin/utils/echo
+
 # This file acts similarly to .bashrc, except for all shells (sh, bash, ksh, zsh, tcsh, csh, ...)
-echo "> Executing all/.allrc"
+echoi "> Executing all/.allrc"
 
 # Set up aliases
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \

@@ -1,7 +1,7 @@
 # Inherit .cshrc
 source ~/.dotfiles/shells/csh/.cshrc
 
-echo "> Executing tsch/.tschrc"
+echoi "> Executing tsch/.tschrc"
 
 # Amends
 set AMEND=~/.dotfiles/shells/amends/tcsh/.tcshrc && test -f $AMEND && source $AMEND

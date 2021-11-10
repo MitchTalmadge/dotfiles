@@ -3,7 +3,7 @@
 # Inherit .allrc
 . ~/.dotfiles/shells/all/.allrc
 
-echo "> Executing sh/.shrc"
+echoi "> Executing sh/.shrc"
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/sh/.shrc && test -f $AMEND && source $AMEND

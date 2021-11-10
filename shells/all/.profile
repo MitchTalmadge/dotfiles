@@ -1,5 +1,7 @@
+. ~/.dotfiles/bin/utils/echo
+
 # This file is like .login/.profile/.zprofile/... and is inherited by all shells.
-echo "> Executing all/.profile"
+echoi "> Executing all/.profile"
 
 # Set environment variables
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'

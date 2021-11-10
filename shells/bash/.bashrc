@@ -1,7 +1,7 @@
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
-echo "> Executing bash/.bashrc"
+echoi "> Executing bash/.bashrc"
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
