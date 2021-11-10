@@ -35,7 +35,7 @@ set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.dotfiles/tools/tmux/plugins/
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-resurrect#v2.4.0'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Other examples:
