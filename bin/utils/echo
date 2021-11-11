@@ -1,8 +1,5 @@
 # Only echo when interactive
-if [[ $- == *i* ]]  
-then
-  alias echoi='echo'
-else
-  alias echoi='true'
-fi
-
+case "$-" in  
+*i* ) alias echoi='echo' ;;
+*   ) alias echoi='true' ;;
+esac

@@ -1,7 +1,8 @@
 #!/bin/sh
-if [[ "$DOTFILES_INTERACTIVE" != "true" ]]; then
-	exec &>/dev/null # Suppress all output for this script if not interactive
-fi
+
+case "$DOTFILES_INTERACTIVE" in
+true) exec &>/dev/null ;; # Suppress all output for this script if not interactive
+esac
 
 if [ -z "$DOTFILES_UPDATED" ]; then
 	echo "> Updating dotfiles..."
