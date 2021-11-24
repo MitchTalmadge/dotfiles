@@ -8,6 +8,8 @@ echoi "> Executing all/.allrc"
   eval 'alias csalias "alias"' || \
   eval 'csalias() { alias "$1=$2"; }'
 
+csalias list-users 'awk -F: '"'"'{print $3 "\t" $4 "\t: " $1}'"'"' /etc/passwd | sort -t\t -nk1'
+
 csalias ls 'ls --color=auto'
 csalias ld 'ls -d -- */ 2>/dev/null || :'
 csalias lh 'ls -d .*'
