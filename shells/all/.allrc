@@ -23,14 +23,17 @@ csalias grep 'grep --color=auto'
 csalias fgrep 'fgrep --color=auto'
 csalias egrep 'egrep --color=auto'
 
+csalias vim 'nvim'
 csalias vi 'vim'
-csalias vis 'sudo -E vim'
+csalias vis 'sudoedit'
 
 csalias get 'sudo apt-get install'
 
 csalias gac 'git add .; git commit -m'
 csalias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@talmad.ge"'
 csalias gpm 'git push origin master'
+csalias git-prune-local 'git fetch -p ; git branch -r | awk '"'"'{print $1}'"'"' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '"'"'{print $1}'"'"' | xargs git branch -d'
+
 
 csalias pb 'nc termbin.com 9999' # Pastebin for terminals
 
