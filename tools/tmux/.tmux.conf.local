@@ -3,6 +3,16 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
+# Scroll through windows via ctrl+alt+left/right
+bind-key -n M-C-Left prev
+bind-key -n M-C-Right next
+
+# Move windows by ctrl+shift+left/right
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
+
+
+
 # Easier Pane Splitting
 unbind %
 unbind '"'
