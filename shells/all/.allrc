@@ -34,9 +34,9 @@ csalias gpm 'git push origin master'
 
 csalias pb 'nc termbin.com 9999' # Pastebin for terminals
 
-csalias dc 'docker-compose'
+csalias dc 'docker compose'
 csalias dc-restart 'dc down; dc up'
-csalias sdc 'sudo docker-compose'
+csalias sdc 'sudo docker compose'
 csalias sdc-restart 'sdc down; sdc up'
 
 # Environment Variables
