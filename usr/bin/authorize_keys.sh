@@ -1,1 +1,1 @@
-/home/mitchtalmadge/.dotfiles/bin/ssh/authorize_keys.sh
+/home/makani/.dotfiles/bin/ssh/authorize_keys.sh

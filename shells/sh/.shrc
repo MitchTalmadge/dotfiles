@@ -5,6 +5,26 @@
 
 echoi "> Executing sh/.shrc"
 
+function ai () {
+    if [[ "${1:0:1}" == "-" || "${1:0:1}" == "—" ]]; then
+        sgpt $1 "${*:2}"
+    else
+        sgpt "$*"
+    fi
+}
+
+function aic () {
+    export LC_ALL=C
+    local chat_id=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+    if [[ "${1:0:1}" == "-" || "${1:0:1}" == "?^?^?" ]]; then
+        sgpt --repl $chat_id $1 "${*:2}"
+    else
+        sgpt --repl $chat_id "$*"
+    fi
+    echo "Chat ID: $chat_id"
+
+}
+
 # Amends
 AMEND=~/.dotfiles/shells/amends/sh/.shrc && test -f $AMEND && source $AMEND
 

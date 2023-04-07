@@ -8,7 +8,7 @@ echoi "> Executing all/.profile"
 
 setenv EDITOR "nvim"
 setenv SUDO_EDITOR "nvim"
-setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:$HOME/.dotfiles/usr/bin:$HOME/go/bin:$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/snap/bin:$PATH"
+setenv PATH "$HOME/usr/bin:$HOME/usr/local/bin:$HOME/.dotfiles/usr/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/snap/bin:$PATH"
 setenv PKG_CONFIG_PATH "$HOME/usr/local/lib/pkgconfig:$HOME/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
 setenv LD_LIBRARY_PATH "$HOME/usr/local/lib:$HOME/usr/local/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH"
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
