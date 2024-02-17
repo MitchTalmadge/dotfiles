@@ -98,3 +98,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/zsh/.zshrc && test -f $AMEND && source $AMEND || true
+
+# eval "$(starship init zsh)"
