@@ -13,3 +13,6 @@
 [submodule "shells/zsh/oh-my-zsh-custom/plugins/zsh-autosuggestions"]
 	path = shells/zsh/oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "shells/zsh/oh-my-zsh-custom/themes/powerlevel10k"]
+	path = shells/zsh/oh-my-zsh-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
