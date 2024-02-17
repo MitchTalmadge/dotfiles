@@ -11,8 +11,6 @@ bind-key -n M-C-Right next
 bind-key -n C-S-Left swap-window -t -1
 bind-key -n C-S-Right swap-window -t +1
 
-
-
 # Easier Pane Splitting
 unbind %
 unbind '"'
@@ -27,6 +25,9 @@ bind -n M-Down select-pane -D
 
 # Mouse Mode
 set -g mouse on
+# Mouse scroll one line at a time
+bind -Tcopy-mode WheelUpPane send -N1 -X scroll-up
+bind -Tcopy-mode WheelDownPane send -N1 -X scroll-down
 
 # Disable activity monitoring
 set -g monitor-activity off
