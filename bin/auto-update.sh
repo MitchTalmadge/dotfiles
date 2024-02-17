@@ -9,7 +9,7 @@ if [ -z "$DOTFILES_UPDATED" ]; then
 	echoi "> Updating dotfiles..."
 	( 
 		cd ~/.dotfiles 
-		git pull --rebase origin master \
+		git pull --quiet --rebase origin master \
 		&& git submodule update --init \
 		&& sh bin/migrations/migrate.sh \
 	)
