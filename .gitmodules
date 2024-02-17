@@ -10,3 +10,6 @@
 [submodule "tools/tmux/plugins/tpm"]
 	path = tools/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "shells/zsh/oh-my-zsh-custom/plugins/zsh-autosuggestions"]
+	path = shells/zsh/oh-my-zsh-custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git

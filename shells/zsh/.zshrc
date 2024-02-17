@@ -8,6 +8,9 @@ echoi "> Executing zsh/.zshrc"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.dotfiles/shells/zsh/oh-my-zsh
 
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM=~/.dotfiles/shells/zsh/oh-my-zsh-custom
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -67,15 +70,12 @@ DISABLE_AUTO_UPDATE="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git sudo zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
