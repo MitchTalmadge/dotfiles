@@ -6,4 +6,4 @@ mkdir -p ~/usr/local/bin
 
 # Install starship
 BIN_PATH=$(cd ~/usr/local/bin && pwd)
-curl -fsSL https://starship.rs/install.sh | bash -s -- --bin-dir $BIN_PATH --yes
+curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir "$BIN_PATH" --yes
