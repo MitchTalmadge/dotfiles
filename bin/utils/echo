@@ -1,5 +1,7 @@
 # Only echo when interactive
-case "$-" in  
-*i* ) alias echoi='echo' ;;
-*   ) alias echoi='true' ;;
-esac
+alias echoi='true' 
+# Disabled below for now... causing conflicts with tools that don't expect output
+# case "$-" in  
+# *i* ) alias echoi='echo' ;;
+# *   ) alias echoi='true' ;;
+# esac
