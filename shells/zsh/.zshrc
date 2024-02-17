@@ -3,6 +3,13 @@
 
 echoi "> Executing zsh/.zshrc"
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # oh-my-zsh
 
 # Path to your oh-my-zsh installation.
@@ -95,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+[[ ! -f ~/.dotfiles/shells/zsh/.p10k.zsh ]] || source ~/.dotfiles/shells/zsh/.p10k.zsh
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/zsh/.zshrc && test -f $AMEND && source $AMEND || true
