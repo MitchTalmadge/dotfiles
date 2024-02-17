@@ -65,4 +65,4 @@ fi
 # Amends
 AMEND=~/.dotfiles/shells/amends/bash/.bashrc && test -f $AMEND && source $AMEND
 
-eval "$(starship init zsh)"
+eval "$(starship init bash)"
