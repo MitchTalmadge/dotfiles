@@ -4,7 +4,7 @@
 # bash specific environment variables
 echoi "> Executing bash/.bash_profile"
 
-# TODO: Placeholder
+source ~/.dotfiles/shells/bash/iterm2_shell_integration.bash
 
 # Run .bashrc
 . ~/.bashrc

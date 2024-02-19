@@ -40,6 +40,11 @@ echoi "> Executing csh/.login"
 # csh/tcsh specific environment variables
 # TODO: Placeholder
 
+# If tcsch (not csh), integration with iTerm2
+if ("$SHELL" == "`command -v tcsh`") then
+  source ~/.dotfiles/shells/tcsh/iterm2_shell_integration.tcsh
+endif
+
 # Amends
 set AMEND=~/.dotfiles/shells/amends/csh/.login && test -f $AMEND && source $AMEND
 

@@ -13,10 +13,12 @@ setenv PKG_CONFIG_PATH "$HOME/usr/local/lib/pkgconfig:$HOME/usr/local/lib64/pkgc
 setenv LD_LIBRARY_PATH "$HOME/usr/local/lib:$HOME/usr/local/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH"
 setenv GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
-# Check for updates
 setenv DOTFILES_INTERACTIVE $([[ $- == *i* ]] && echo "true" || echo "false")
+
 sh ~/.dotfiles/bin/auto-update.sh
 setenv DOTFILES_UPDATED "true"
+
+sh ~/.dotfiles/bin/startup.sh
 
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \

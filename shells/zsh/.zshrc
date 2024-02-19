@@ -105,5 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.dotfiles/shells/zsh/.p10k.zsh ]] || source ~/.dotfiles/shells/zsh/.p10k.zsh
 
+# iTerm2 Integration
+source ~/.dotfiles/shells/zsh/iterm2_shell_integration.zsh
+
 # Amends
 AMEND=~/.dotfiles/shells/amends/zsh/.zshrc && test -f $AMEND && source $AMEND || true
