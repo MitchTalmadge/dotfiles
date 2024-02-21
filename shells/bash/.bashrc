@@ -1,7 +1,7 @@
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
-echoi "> Executing bash/.bashrc"
+df_log "> Executing bash/.bashrc"
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -66,3 +66,4 @@ fi
 AMEND=~/.dotfiles/shells/amends/bash/.bashrc && test -f $AMEND && source $AMEND
 
 eval "$(starship init bash)"
+. "$HOME/.cargo/env"

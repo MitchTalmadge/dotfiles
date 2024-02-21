@@ -1,7 +1,7 @@
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
-echoi "> Executing zsh/.zshrc"
+df_log "> Executing zsh/.zshrc"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

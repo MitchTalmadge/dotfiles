@@ -1,47 +1,48 @@
-. ~/.dotfiles/bin/utils/echo
+sh ~/.dotfiles/bin/init.sh
+. ~/.dotfiles/bin/utils/log
 
 # This file acts similarly to .bashrc, except for all shells (sh, bash, ksh, zsh, tcsh, csh, ...)
-echoi "> Executing all/.allrc"
+df_log "> Executing all/.allrc"
 
 # Set up aliases
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
-  eval 'alias csalias "alias"' || \
-  eval 'csalias() { alias "$1=$2"; }'
+  eval 'alias df_alias "alias"' || \
+  eval 'df_alias() { alias "$1=$2"; }'
 
-csalias list-users 'awk -F: '"'"'{print $3 "\t" $4 "\t: " $1}'"'"' /etc/passwd | sort -t\t -nk1'
+df_alias list-users 'awk -F: '"'"'{print $3 "\t" $4 "\t: " $1}'"'"' /etc/passwd | sort -t\t -nk1'
 
-csalias ls 'ls --color=auto'
-csalias ld 'ls -d -- */ 2>/dev/null || :'
-csalias lh 'ls -d .*'
-csalias la 'ls -a'
-csalias ll 'ls -lah'
+df_alias ls 'ls --color=auto'
+df_alias ld 'ls -d -- */ 2>/dev/null || :'
+df_alias lh 'ls -d .*'
+df_alias la 'ls -a'
+df_alias ll 'ls -lah'
 
-csalias dir 'dir --color=auto'
-csalias vdir 'vdir --color=auto'
+df_alias dir 'dir --color=auto'
+df_alias vdir 'vdir --color=auto'
 
-csalias grep 'grep --color=auto'
-csalias fgrep 'fgrep --color=auto'
-csalias egrep 'egrep --color=auto'
+df_alias grep 'grep --color=auto'
+df_alias fgrep 'fgrep --color=auto'
+df_alias egrep 'egrep --color=auto'
 
-#csalias vim 'nvim'
-#csalias vi 'vim'
-csalias e 'nvim'
-csalias e! 'sudoedit'
+#df_alias vim 'nvim'
+#df_alias vi 'vim'
+df_alias e 'nvim'
+df_alias e! 'sudoedit'
 
-csalias get 'sudo apt-get install'
+df_alias get 'sudo apt-get install'
 
-csalias gac 'git add .; git commit -m'
-csalias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@talmad.ge"'
-csalias gpm 'git push origin master'
-csalias git-prune-local 'git fetch -p ; git branch -r | awk '"'"'{print $1}'"'"' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '"'"'{print $1}'"'"' | xargs git branch -d'
+df_alias gac 'git add .; git commit -m'
+df_alias gcfg 'git config user.name "Mitch Talmadge"; git config user.email "mitch@talmad.ge"'
+df_alias gpm 'git push origin master'
+df_alias git-prune-local 'git fetch -p ; git branch -r | awk '"'"'{print $1}'"'"' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 
 
-csalias pb 'nc termbin.com 9999' # Pastebin for terminals
+df_alias pb 'nc termbin.com 9999' # Pastebin for terminals
 
-csalias dc 'docker compose'
-csalias dc-restart 'dc down; dc up'
-csalias sdc 'sudo docker compose'
-csalias sdc-restart 'sdc down; sdc up'
+df_alias dc 'docker compose'
+df_alias dc-restart 'dc down; dc up'
+df_alias sdc 'sudo docker compose'
+df_alias sdc-restart 'sdc down; sdc up'
 
 # Environment Variables
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'

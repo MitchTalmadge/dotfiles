@@ -1,14 +1,14 @@
 # Inherit all .profile
 source ~/.dotfiles/shells/all/.profile
 
-echoi "> Executing csh/.login"
+df_log "> Executing csh/.login"
 
-# echoi "** CURRENT SHELL: $SHELL **"
+# df_log "** CURRENT SHELL: $SHELL **"
 # if ($?prompt) then
 #   # Try to switch to zsh
 #   set NEW_SHELL="`command -v zsh`"
 #   if ("$NEW_SHELL" != "") then
-#     echoi "> Upgrading to shell $NEW_SHELL"
+#     df_log "> Upgrading to shell $NEW_SHELL"
 #     setenv SHELL "$NEW_SHELL"
 #     exec "$SHELL" -l
 #   endif
@@ -16,7 +16,7 @@ echoi "> Executing csh/.login"
 #   # Try to switch to bash
 #   set NEW_SHELL="`command -v bash`"
 #   if ("$NEW_SHELL" != "") then
-#     echoi "> Upgrading to shell $NEW_SHELL"
+#     df_log "> Upgrading to shell $NEW_SHELL"
 #     setenv SHELL "$NEW_SHELL"
 #     exec "$SHELL" -l
 #   endif
@@ -27,12 +27,12 @@ echoi "> Executing csh/.login"
 #     # Try to switch to tcsh.
 #     set NEW_SHELL="`command -v tcsh`"
 #     if ("$NEW_SHELL" != "") then
-#       echoi "> Upgrading to shell $NEW_SHELL"
+#       df_log "> Upgrading to shell $NEW_SHELL"
 #       setenv SHELL "$NEW_SHELL"
 #       exec "$SHELL" -l
 #     else
 #       # Fallback to default.
-#       echoi "> Upgrading to shell $SHELL"
+#       df_log "> Upgrading to shell $SHELL"
 #     endif
 #   endif
 # endif

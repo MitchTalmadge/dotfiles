@@ -1,0 +1,3 @@
+(echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
+  eval 'alias df_log "echo \!:1 > /tmp/df-log"' || \
+  eval 'df_log() { echo $1 > /tmp/df-log; }'

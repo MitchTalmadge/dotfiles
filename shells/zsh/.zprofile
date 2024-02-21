@@ -1,7 +1,7 @@
 # Inherit sh .profile
 . ~/.dotfiles/shells/sh/.profile
 
-echoi "> Executing zsh/.zprofile"
+df_log "> Executing zsh/.zprofile"
 
 # Amends
 AMEND=~/.dotfiles/shells/amends/zsh/.zprofile && test -f $AMEND && source $AMEND
