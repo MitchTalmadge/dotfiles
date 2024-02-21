@@ -3,6 +3,7 @@ sh ~/.dotfiles/bin/init.sh
 
 # This file acts similarly to .bashrc, except for all shells (sh, bash, ksh, zsh, tcsh, csh, ...)
 df_log "> Executing all/.allrc"
+df_log "Setting up aliases"
 
 # Set up aliases
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
@@ -45,6 +46,7 @@ df_alias sdc 'sudo docker compose'
 df_alias sdc-restart 'sdc down; sdc up'
 
 # Environment Variables
+df_log "Setting up environment variables"
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") || eval 'setenv() { export "$1=$2"; }'
 
 setenv GPG_TTY `tty`

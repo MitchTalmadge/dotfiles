@@ -19,7 +19,7 @@ setenv DOTFILES_INTERACTIVE $([[ $- == *i* ]] && echo "true" || echo "false")
 sh ~/.dotfiles/bin/auto-update.sh
 setenv DOTFILES_UPDATED "true"
 
-sh ~/.dotfiles/bin/startup.sh
+sh ~/.dotfiles/bin/startup.sh >> /tmp/df-log 2>&1
 
 # Amends
 (echo $0 | grep -q "tcsh" || echo $0 | grep -q "csh") && \
