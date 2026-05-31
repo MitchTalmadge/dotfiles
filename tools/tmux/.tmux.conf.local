@@ -1,3 +1,13 @@
+# 24-bit (truecolor) support
+# The framework .tmux.conf hardcodes default-terminal to screen-256color and
+# has its COLORTERM auto-detection commented out, so enable truecolor here.
+# This file is sourced after .tmux.conf, so these override the defaults.
+# Use tmux-256color terminfo inside tmux; advertise that the outer terminal
+# (iTerm2 reports TERM=xterm-256color) is RGB-capable. RGB is the standard
+# terminfo cap; *256col* globs both xterm-256color and screen-256color.
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",*256col*:RGB"
+
 # Change Prefix from C-b to C-a
 unbind C-b
 set-option -g prefix C-a
