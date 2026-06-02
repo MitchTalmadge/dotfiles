@@ -49,11 +49,48 @@ bind -Tcopy-mode WheelDownPane send -N1 -X scroll-down
 set -g monitor-activity off
 
 # Styling
-# Highlight Active Pane
-#set-option -g window-style "bg=colour253"
-#set-option -g window-active-style "bg=colour231"
-#set-option -g pane-border-style "bg=colour253,fg=black"
-#set-option -g pane-active-border-style "fg=green" 
+# Colours are driven through oh-my-tmux's theme variables, NOT plain `set`
+# commands. The framework re-applies its whole theme AFTER sourcing this file
+# (and only re-runs `set` lines tagged `#!important` at the very end), so a
+# direct `set -g *-style` colour override gets clobbered. tmux treats a bare
+# `name="value"` line as a global environment variable, which the framework
+# reads during its theme step — that's the supported lever, used below.
+
+# Pane borders: heavy line style for definition + a labelled header so the
+# focused pane (e.g. Claude) is unmistakable. The framework does NOT manage
+# pane-border-lines/status/format, so these plain `set`s stick as-is.
+set -g pane-border-lines heavy
+set -g pane-border-status top
+set -g pane-border-format "#{?pane_active,#[fg=#89b4fa#,bold] ▸ #{pane_index}: #{pane_current_command} ,#[fg=#6c7086]   #{pane_index}: #{pane_current_command} }"
+tmux_conf_theme_pane_border="#45475a"
+tmux_conf_theme_pane_active_border="#89b4fa"
+
+# (Dimming inactive panes was tried here but removed: it works by overriding the
+# pane's *default* foreground, which TUIs like Claude rely on, so it greyed out
+# their text. The heavy borders + active-pane label already make focus obvious.)
+
+# Pastel status bar — segments coloured left→right like a soft rainbow, with
+# dark text on each pastel for readability:
+#   left:  session (lavender) | uptime (pink)
+#   tabs:  current window = mint green, others muted grey
+#   right: date (subtle) | user (peach) | host (yellow)
+tmux_conf_theme_status_fg="#a6adc8"
+tmux_conf_theme_status_bg="#1f1f28"
+tmux_conf_theme_status_left_fg="#1f1f28,#1f1f28,#1f1f28"
+tmux_conf_theme_status_left_bg="#cba6f7,#f5c2e7,#89b4fa"
+tmux_conf_theme_status_left_attr="bold,none,none"
+tmux_conf_theme_status_right_fg="#a6adc8,#1f1f28,#1f1f28"
+tmux_conf_theme_status_right_bg="#1f1f28,#f6c177,#f9e2af"
+tmux_conf_theme_status_right_attr="none,none,bold"
+tmux_conf_theme_window_status_fg="#6c7086"
+tmux_conf_theme_window_status_bg="#1f1f28"
+tmux_conf_theme_window_status_current_fg="#1f1f28"
+tmux_conf_theme_window_status_current_bg="#a6e3a1"
+
+# Copy to the system clipboard — tmux emits OSC52 so yanks reach the real
+# macOS clipboard, even over SSH (iTerm2 supports this). tmux-yank (below)
+# adds pbcopy integration and binds y in copy-mode.
+set -g set-clipboard on
 
 # Tmux Plugin Manager 
 # -------------------
@@ -64,6 +101,16 @@ set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.dotfiles/tools/tmux/plugins/
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect#v2.4.0'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Auto-save & restore sessions (resurrect + continuum):
+#   - save every 15 minutes, and restore the last session when tmux starts
+#   - capture pane contents so scrollback comes back too
+# Note: continuum restores layouts/working dirs; it won't relaunch Claude
+# unless added to @resurrect-processes, but the panes/splits return.
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '15'
+set -g @resurrect-capture-pane-contents 'on'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
