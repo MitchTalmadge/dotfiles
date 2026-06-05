@@ -5,6 +5,16 @@
 
 df_log "> Executing sh/.profile"
 
+# Advertise 24-bit color support. SSH does not forward COLORTERM, so capable
+# terminals (iTerm2, etc.) reach here with it unset. COLORTERM is a claim, not a
+# negotiation: capable terminals render true 24-bit; modern-but-non-truecolor
+# ones downsample to their palette. We only skip the few terminal types that
+# mishandle SGR truecolor outright, and we never override a value already set.
+case "$TERM" in
+  linux|dumb|vt*|"") ;;
+  *) [ -z "$COLORTERM" ] && setenv COLORTERM truecolor ;;
+esac
+
 # function upgrade_shell() {
 # 	# Try to upgrade the default shell to preferred shell.
 # 	export CURR_SHELL=$SHELL

@@ -25,12 +25,14 @@ bind-key -n C-S-Right swap-window -t +1
 unbind %
 unbind '"'
 # Splitting from inside a Claude pane launches another (fresh) Claude session
-# in the same directory; otherwise a normal shell split.
+# in the same directory; otherwise a normal shell split. Claude runs inside a
+# shell (claude; exec $SHELL) so exiting Claude drops back to a prompt in the
+# same pane instead of closing the split.
 bind | if-shell -F '#{==:#{pane_current_command},claude}' \
-  'split-window -h -c "#{pane_current_path}" claude' \
+  "split-window -h -c '#{pane_current_path}' 'claude; exec \$SHELL'" \
   'split-window -h'
 bind _ if-shell -F '#{==:#{pane_current_command},claude}' \
-  'split-window -v -c "#{pane_current_path}" claude' \
+  "split-window -v -c '#{pane_current_path}' 'claude; exec \$SHELL'" \
   'split-window -v'
 
 # Alt-Arrow-Key Pane Switching
