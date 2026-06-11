@@ -1,3 +1,11 @@
+# If not running interactively, don't do anything. This must stay at the very
+# top: sshd sources ~/.bashrc even for scp/sftp (it detects the network socket
+# on stdin), and any stdout produced during startup corrupts the transfer.
+case $- in
+  *i*) ;;
+    *) return;;
+esac
+
 # Inherit .shrc
 . ~/.dotfiles/shells/sh/.shrc
 
