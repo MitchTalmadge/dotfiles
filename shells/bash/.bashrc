@@ -67,3 +67,8 @@ AMEND=~/.dotfiles/shells/amends/bash/.bashrc && test -f $AMEND && source $AMEND
 
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
+
+# nvm (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
