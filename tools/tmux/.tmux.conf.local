@@ -98,7 +98,13 @@ tmux_conf_theme_window_status_current_bg="#a6e3a1"
 # adds pbcopy integration and binds y in copy-mode.
 set -g set-clipboard on
 
-# Tmux Plugin Manager 
+# Forward OSC 1337 escape sequences (inline images via imgcat, iTerm2 file
+# upload/download via it2ul/it2dl) through to the outer terminal. Off by
+# default since tmux 3.3, which is why iTerm2 uploads hang at "starting" —
+# tmux was eating the transfer sequences before they reached iTerm2.
+set -g allow-passthrough on
+
+# Tmux Plugin Manager
 # -------------------
 # Set plugin install dir
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.dotfiles/tools/tmux/plugins/tpm-dl/"
