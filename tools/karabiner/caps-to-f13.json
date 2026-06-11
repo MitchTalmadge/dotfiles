@@ -1,0 +1,15 @@
+{
+  "title": "Caps Lock → F13 (tmux prefix)",
+  "rules": [
+    {
+      "description": "Change caps_lock to f13",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+          "to": [ { "key_code": "f13" } ]
+        }
+      ]
+    }
+  ]
+}
