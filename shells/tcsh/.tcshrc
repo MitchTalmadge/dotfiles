@@ -6,3 +6,4 @@ df_log "> Executing tsch/.tschrc"
 # Amends
 set AMEND=~/.dotfiles/shells/amends/tcsh/.tcshrc && test -f $AMEND && source $AMEND
 
+source "$HOME/.cargo/env.tcsh"
