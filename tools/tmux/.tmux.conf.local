@@ -8,13 +8,16 @@
 set -g default-terminal "tmux-256color"
 set -ag terminal-overrides ",*256col*:RGB"
 
-# Prefix: Caps Lock → F13 via Karabiner on macOS. iTerm2 emits ESC[1;2P for F13,
-# which tmux decodes as S-F1 (Shift+F1). C-a kept as a secondary/fallback prefix
-# for terminals without the remap (e.g. SSH from another machine).
+# Prefix: Caps Lock → F13 via Karabiner on macOS. iTerm2 emits ESC[1;2P (S-F1)
+# standalone, but once tmux negotiates modifyOtherKeys (extended-keys on),
+# iTerm2 re-encodes F13 as \E[1;2R (S-F3). extended-keys must stay on so
+# Ctrl+Enter / Ctrl+Shift bindings work in Claude Code and modern editors, so
+# we bind S-F3 — the bytes that actually arrive — as the prefix.
+# C-a kept as a secondary/fallback for SSH from machines without the remap.
 unbind C-b
-set -g prefix S-F1
+set -g prefix S-F3
 set -g prefix2 C-a
-bind-key -N 'send prefix' S-F1 send-prefix
+bind-key -N 'send prefix' S-F3 send-prefix
 bind-key C-a send-prefix
 
 # Scroll through windows via ctrl+alt+left/right

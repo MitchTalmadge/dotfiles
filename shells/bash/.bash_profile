@@ -13,3 +13,4 @@ source ~/.dotfiles/shells/bash/iterm2_shell_integration.bash
 AMEND=~/.dotfiles/shells/amends/bash/.bash_profile && test -f $AMEND && source $AMEND
 
 . "$HOME/.cargo/env"
+export CC_IP_ADDRESS=100.122.140.13
