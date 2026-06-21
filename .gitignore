@@ -4,3 +4,8 @@ logs/*
 !logs/README.md
 shells/amends/*
 !shells/amends/README.md
+
+# Vim swap files
+*.swp
+*.swo
+*~
